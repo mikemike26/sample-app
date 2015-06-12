@@ -14,7 +14,15 @@
  * or any other Grunt tasks you like.)
  */
 
-//@import 'styles.scss';
+//VENDOR
+@import 'vendor/font-awesome/scss/font-awesome';
+@import 'vendor/bootstrap-sass/assets/stylesheets/bootstrap';
+
+//LOGIN
+@import 'login/cleanstickyfooter';
+@import 'login/colors';
+@import 'login/custom';
+@import 'login/normalize';
 
 // For example:
 //

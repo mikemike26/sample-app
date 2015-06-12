@@ -1,0 +1,313 @@
+/*Custom Style Sheet for VSF */
+
+/**
+ * Body
+ */
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid, .container {
+	min-width: 768px;
+}
+
+/**
+ * Pull-out
+ */
+.vsf-pull-out {
+	display: none;
+		position: fixed;
+		bottom: 0;
+	  top: 0;
+	  width: 400px;
+		z-index: 1040;
+	  background-color: $vsf-pull-out-gray;
+	  border-right: 10px solid $vsf-blue;
+	  color: $vsf-font-color;
+	  a {
+	  	color: $vsf-font-color;
+	  }
+	  .blue-text {
+	  	color: $vsf-blue;
+	  }
+	  p {
+	  	font-size: 23px;
+	  }
+	  .pull-out-tab {
+	  	position: relative;
+		  left: 66px;
+		  top: 30px;
+	  	span {
+	  		a {
+	  			color: $vsf-white;
+	  		}
+		  background-color: $vsf-blue;
+		  padding: 16px;
+		  font-size: 37px;
+		  float: right;
+	  }
+	}
+	.pull-out-inner {
+		padding: 40px;
+		nav {
+			  margin: 0 -39px 0 -40px;
+			ul {
+				margin-bottom: 40px;
+				li {
+					background-color: $vsf-white;
+					a {
+						  padding: 25px 15px;
+						  font-size: 19px;
+  						color: $vsf-black;
+  						padding-left: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Header 
+ */
+header {
+	position: relative;
+  z-index: 20;
+	#header-top {
+
+		position: relative;
+		background-color: $vsf-blue;
+		height: 130px;
+			.mid-header {
+			position: relative;
+		  top: 70px;
+		  table {
+		  	width: 100%;
+		  	td{
+		  		&:first-child {
+		  			width: 32%;
+		  			img {
+		  				width: 170px;
+		  			}
+		  		}
+		  	}
+		  }
+		}
+		.lt-header {
+			font-size: 30px;
+		  color: $vsf-white;
+		  position: relative;
+		  top: 80px;
+		  left: 20px;
+		  p {
+		  	a {
+		  		color: $vsf-white;
+		  	}
+		  }
+		}
+		.rt-header {
+			position: relative;
+	  	top: 80px;
+			font-size: 30px;
+		  color: $vsf-white;
+		  p {
+		  	float: right;
+	  		margin-right: 10px;
+	  		a {
+	  			color: $vsf-white;
+	  		}
+		  }
+		}
+	}
+}
+.top-header-bar {
+			font-size: 17px;
+		}
+
+.logo-search-bar {
+	input {
+		min-width: 260px;
+	}
+}
+
+.input-group-addon {
+	border-radius: 0;
+}
+
+
+
+/**
+ * Sidebar
+ */
+
+#sidebar {
+	width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 185px; 
+  background: $vsf-gray;
+  border: 1px solid $nav-gray-border;
+  z-index: 10;
+  overflow: auto;
+}
+
+/**
+ * Navbars
+ */
+header .navbar-default {
+  background-color: $vsf-gray;
+}
+
+.navbar-nav > li > a {
+  line-height: 15px;
+  }
+
+#bottom-navbar {
+	overflow: hidden;
+  width: 100%;
+      ul {
+      	
+      }
+    .nav.navbar-nav{
+    	width: 100%;
+    	li {
+    		text-align: center;
+			  width: 100%;
+    	}
+    }
+		.nav.navbar-nav.navbar-right {
+
+			li {
+			width: 14.7%;
+		  text-align: center;
+		  border: 1px solid $nav-gray-border;
+		  &:last-child {
+		  	border-right: none;
+		  }
+		  &:first-child {
+		  	width: 298px;
+		  }
+		}
+	}
+}
+@media (min-width: 993px) and (max-width: 1100px) {
+	#bottom-navbar .nav.navbar-nav.navbar-right li {
+  	width: 14%;
+  }
+}
+
+@media (max-width : 992px) {
+	#bottom-navbar .nav.navbar-nav.navbar-right li {
+  	width: 12%;
+  }
+
+  /*#bottom-navbar .nav.navbar-nav.navbar-right li a{
+		padding-left: 0;
+	  padding-right: 0; 
+  }*/
+}
+
+@media (max-width : 768px) {
+	#bottom-navbar .nav.navbar-nav.navbar-right li {
+  	.nav navbar-nav navbar-right {
+  		margin-top: 0;
+  	}
+  }
+}
+
+@media (min-width : 768px) {
+	#bottom-navbar .navbar-nav > li > a {
+  padding-bottom: 30px;
+  }
+}
+
+/**
+ * Prevent Navbar Collapse
+ ***************************************/
+.navbar-collapse.collapse {
+display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+margin-right: -15px !important;
+}
+
+.navbar-right {
+float: right!important;
+}
+/*************************************/
+
+/**
+ * Main Content
+ */
+div#content_wrapper {
+	padding-top: 195px;
+  padding-left: 300px;
+}
+/**
+ * Footer
+ */
+#footer_wrapper {
+  position: fixed;
+	z-index: 20;
+	background-color: $vsf-gray;
+}
+
+div {
+	&#footer_wrapper {
+		padding: 0;
+	}
+}
+
+div#footer_inner_wrapper .container-fluid {
+	 padding-left: 0; 
+   padding-right: 0;
+} 
+
+/**
+ * Login Page
+ */
+
+.login {
+	background-color: $vsf-login-bkgd;
+  background-image: radial-gradient(circle at center center, $vsf-login-radial-primary, $vsf-login-radial-secondary);
+  .div-center {
+  	bottom: 0;
+	  height: 500px;
+	  left: 0;
+	  margin: auto;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  width: 80%;
+	  min-width: 700px;
+  }
+}
+
+.login-block {
+	input {
+		height: 50px;
+		border-radius: 0;
+		margin-top: 20px;
+		margin-top: 35px;
+	}
+	img {
+		display: inline;
+	}
+	a {
+		&.btn-primary {
+		margin-top: 20px;
+	  width: 100%;
+	  height: 50px;
+	  line-height: 2.3;
+	  background-color: #1976d3;
+	  border-radius: 0;
+	  }
+  }
+}
