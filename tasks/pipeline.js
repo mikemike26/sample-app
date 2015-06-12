@@ -28,6 +28,9 @@ var jsFilesToInject = [
   'js/dependencies/angular.min.js',
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
+  //load all module files first
+  'js/public/module/*.js',
+  'js/private/module/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.

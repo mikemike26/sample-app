@@ -1,0 +1,1 @@
+//public directory is for javascript that does not need authentication to execute

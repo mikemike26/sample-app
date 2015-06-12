@@ -74,8 +74,9 @@ module.exports.views = {
   * layout: 'layouts/internal'                                                *
   *                                                                           *
   ****************************************************************************/
-
+  //set this to false to disable layout.ejs
   layout: 'layout',
+  //layout: false,
 
   /****************************************************************************
   *                                                                           *
