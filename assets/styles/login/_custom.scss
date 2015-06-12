@@ -6,6 +6,10 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 }
+.login-module {
+	width: 100%;
+	height: 100%;
+}
 
 .container-fluid, .container {
 	min-width: 768px;
@@ -68,7 +72,7 @@ body {
 }
 
 /**
- * Header 
+ * Header
  */
 header {
 	position: relative;
@@ -146,7 +150,7 @@ header {
   left: 0;
   top: 0;
   bottom: 0;
-  padding-top: 185px; 
+  padding-top: 185px;
   background: $vsf-gray;
   border: 1px solid $nav-gray-border;
   z-index: 10;
@@ -168,7 +172,7 @@ header .navbar-default {
 	overflow: hidden;
   width: 100%;
       ul {
-      	
+
       }
     .nav.navbar-nav{
     	width: 100%;
@@ -205,7 +209,7 @@ header .navbar-default {
 
   /*#bottom-navbar .nav.navbar-nav.navbar-right li a{
 		padding-left: 0;
-	  padding-right: 0; 
+	  padding-right: 0;
   }*/
 }
 
@@ -266,9 +270,9 @@ div {
 }
 
 div#footer_inner_wrapper .container-fluid {
-	 padding-left: 0; 
+	 padding-left: 0;
    padding-right: 0;
-} 
+}
 
 /**
  * Login Page
@@ -277,6 +281,8 @@ div#footer_inner_wrapper .container-fluid {
 .login {
 	background-color: $vsf-login-bkgd;
   background-image: radial-gradient(circle at center center, $vsf-login-radial-primary, $vsf-login-radial-secondary);
+	width: 100%;
+	height: 100%;
   .div-center {
   	bottom: 0;
 	  height: 500px;
