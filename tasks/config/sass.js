@@ -2,6 +2,9 @@ module.exports = function(grunt) {
 
   grunt.config.set('sass', {
     dev: {
+      options: {
+        cacheLocation: 'assets/styles/.sass-cache'
+      },
       files: [{
         expand: true,
         cwd: 'assets/styles/',
