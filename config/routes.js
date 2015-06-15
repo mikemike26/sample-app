@@ -34,6 +34,12 @@ module.exports.routes = {
 
   'GET /': {
     view: 'login'
+  },
+  'GET /signup': {
+    view: 'signup'
+  },
+  'GET /main': {
+    view: 'dashboard'
   }
 
   /***************************************************************************
