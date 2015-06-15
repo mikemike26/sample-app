@@ -300,8 +300,10 @@ div#footer_inner_wrapper .container-fluid {
 	input {
 		height: 50px;
 		border-radius: 0;
-		margin-top: 20px;
-		margin-top: 35px;
+		margin-top: 15px;
+		&:last-child {
+			margin-top: 10px;
+		}
 	}
 	img {
 		display: inline;
