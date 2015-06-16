@@ -5,10 +5,10 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+
 module.exports = {
   signup: function(req, res) {
     var Passwords = require('machinepack-passwords');
-
     // Encrypt a string using the BCrypt algorithm.
     Passwords.encryptPassword({
       password: req.body['password'],
@@ -20,7 +20,6 @@ module.exports = {
       },
       // OK.
       success: function (encryptedPassword){
-        //console.log(req.body);
         User.create({
           name: req.body['name'],
           email: req.body['email'],
@@ -68,6 +67,21 @@ module.exports = {
         }
       });
 
+    });
+  },
+  logout: function(req, res) {
+    User.findOne(req.session.me, function foundUser(err, user) {
+      if(err) {
+        return res.negotiate(err);
+      }
+      if(!user) {
+        sails.log.verbose('session refers to a user that no longer exists');
+        return res.backToHomePage();
+      }
+
+      //wipe out session
+      req.session.me = null;
+      return res.backToHomePage();
     });
   }
 };

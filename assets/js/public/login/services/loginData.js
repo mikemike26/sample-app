@@ -16,6 +16,15 @@ angular.module('LoginModule').factory('LoginData',['$http', '$q', function($http
       deferred.resolve(data);
     }).error(function (data, status, headers, config) {
       deferred.reject(data);
+
+
+      responseObject = {
+        status: failed,
+        key: email,
+        email: {
+          reason: "inproper attribute"
+        }
+      }
     });
     return deferred.promise;
   };

@@ -84,7 +84,7 @@ module.exports.blueprints = {
   ***************************************************************************/
 
    shortcuts: false
-
+  
   /***************************************************************************
   *                                                                          *
   * An optional mount path for all blueprint routes on a controller,         *
