@@ -1,4 +1,4 @@
-angular.module('SignupModule', []).config(function($httpProvider) {
+angular.module('SignupModule', []).config(['$httpProvider',function($httpProvider) {
   $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
-});
+}]);
 
