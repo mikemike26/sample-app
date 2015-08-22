@@ -39,10 +39,10 @@ module.exports.routes = {
   //Users
   'POST /users/create': 'UserController.createUser',
   'GET /users/find': 'UserController.findUsers',
-  'GET /users/find/:id': 'UserController.findOne',
-  'PUT /users/edit': 'UserController.edit',
-  'DELETE /users/delete': 'UserController.removeUser'
-  
+  'GET /users/find/:id': 'UserController.findOneUser',
+  'PUT /users/edit': 'UserController.editUser',
+  'DELETE /users/delete': 'UserController.deleteUser'
+
 
   /***************************************************************************
   *                                                                          *

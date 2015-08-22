@@ -7,81 +7,67 @@
 
 
 module.exports = {
-  signup: function(req, res) {
-    var Passwords = require('machinepack-passwords');
-    // Encrypt a string using the BCrypt algorithm.
-    Passwords.encryptPassword({
-      password: req.body['password'],
-      difficulty: 10
-    }).exec({
-      // An unexpected error occurred.
-      error: function (err){
+  createUser: function(req, res) {
+    User.create({
+      firstName: req.body['firstName'],
+      lastName: req.body['lastName'],
+      gitHubId: req.body['gitHubId'],
+      email: req.body['email']
+    }).exec(function userCreated(err, newUser) {
+      if(err) {
         res.negotiate(err);
-      },
-      // OK.
-      success: function (encryptedPassword){
-        User.create({
-          name: req.body['name'],
-          email: req.body['email'],
-          password: encryptedPassword,
-          lastLoggedIn: new Date()
-        }, function userCreated(err, newUser) {
-          if(err) {
-            return res.negotiate(err);
-          }
-          return res.json({
-            id: newUser.id
-          });
-        });
       }
+      return res.json({
+        id: newUser.id
+      });
     });
   },
-  login: function(req, res) {
-    var Passwords = require('machinepack-passwords');
-    User.findOne({
-      email: req.body['email']
-    }, function foundUser(err, user) {
+  findUsers: function(req, res) {
+    User.find().exec(function(err, users) {
       if(err) {
-        return res.negotiate(err);
+        res.negotiate(err);
+      }
+      return res.json(users);
+    });
+  },
+  findOneUser: function(req, res) {
+    User.findOne({
+      id: req.params['id']
+    }).exec(function(err, user) {
+      if(err) {
+        res.negotiate(err);
       }
       if(!user) {
         return res.notFound();
       }
-
-      Passwords.checkPassword({
-        passwordAttempt: req.body['password'],
-        encryptedPassword: user.password
-      }).exec({
-        // An unexpected error occurred.
-        error: function (err){
-          return res.negotiate(err);
-        },
-        // Password attempt does not match already-encrypted version
-        incorrect: function (){
-          return res.notFound();
-        },
-        // OK.
-        success: function (){
-          req.session.me = user.id;
-          return res.ok();
-        }
-      });
-
+      return res.json(user);
     });
   },
-  logout: function(req, res) {
-    User.findOne(req.session.me, function foundUser(err, user) {
+  editUser: function(req, res) {
+    User.update({
+      id: req.body['id']
+    },{
+      firstName: req.body['firstName'],
+      lastName: req.body['lastName'],
+      gitHubId: req.body['gitHubId'],
+      email: req.body['email']
+    }).exec(function(err, user) {
       if(err) {
-        return res.negotiate(err);
+        res.negotiate(err);
       }
-      if(!user) {
-        sails.log.verbose('session refers to a user that no longer exists');
-        return res.backToHomePage();
+      return res.json({
+        id: user.id
+      });
+    });
+  },
+  deleteUser: function(req, res) {
+    User.destroy({
+      id: req.body['id']
+    }).exec(function(err) {
+      if(err) {
+        res.negotiate(err);
       }
-
-      //wipe out session
-      req.session.me = null;
-      return res.backToHomePage();
+      return res.ok();
     });
   }
 };
