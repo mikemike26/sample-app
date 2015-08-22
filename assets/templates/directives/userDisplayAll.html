@@ -5,7 +5,7 @@
     <th>Github Id</th>
   </tr>
   <tr ng-if="users.length > 0 && !usersLoading" ng-repeat="user in users">
-    <td>{{user.name}}</td>
+    <td>{{user.firstName}} {{user.lastName}}</td>
     <td>{{user.email}}</td>
     <td>{{user.gitHubId}}</td>
   </tr>
