@@ -34,7 +34,15 @@ module.exports.routes = {
 
   'GET /': {
     view: 'dashboard'
-  }
+  },
+
+  //Users
+  'POST /users/create': 'UserController.createUser',
+  'GET /users/find': 'UserController.findUsers',
+  'GET /users/find/:id': 'UserController.findOne',
+  'PUT /users/edit': 'UserController.edit',
+  'DELETE /users/delete': 'UserController.removeUser'
+  
 
   /***************************************************************************
   *                                                                          *
