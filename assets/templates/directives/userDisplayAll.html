@@ -1,0 +1,15 @@
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Github Id</th>
+  </tr>
+  <tr ng-if="users.length > 0 && !usersLoading" ng-repeat="user in users">
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.gitHubId}}</td>
+  </tr>
+  <tr ng-if="users.length === 0 && !usersLoading">
+    <td colspan="3">There are no users</td>
+  </tr>
+</table>
