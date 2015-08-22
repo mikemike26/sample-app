@@ -3,6 +3,7 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
   //create a user
   UserModel.create = function(user) {
     var deferred = $q.defer();
+    console.log(user);
     $http({
       method: 'POST',
       url: 'http://localhost:1337/users/create',

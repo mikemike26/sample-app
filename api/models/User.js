@@ -11,7 +11,8 @@ module.exports = {
     id: {
       type: 'integer',
       size: 15,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     firstName: {
       type: 'string',

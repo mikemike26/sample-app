@@ -8,6 +8,9 @@ angular.module('appModule').directive('userDisplayAll',['UserModel', '$state', '
         scope.users = data;
         scope.usersLoading = false;
       });
+      scope.selectUser = function(user) {
+        $state.transitionTo('main.user', {id: user.id});
+      };
     }
   }
 }]);

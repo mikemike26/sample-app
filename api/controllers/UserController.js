@@ -9,6 +9,7 @@
 module.exports = {
   createUser: function(req, res) {
     User.create({
+      id: null,
       firstName: req.body['firstName'],
       lastName: req.body['lastName'],
       gitHubId: req.body['gitHubId'],

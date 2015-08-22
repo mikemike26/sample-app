@@ -1,0 +1,12 @@
+<h2>{{user.firstName}} {{user.lastName}} - <a type="button" class="btn btn-warning" ui-sref="main.editUser({id: user.id})">edit</a></h2>
+<p>
+  Email Address: {{user.email}} <br />
+  Github Id: {{user.gitHubId}} <br />
+</p>
+<h3>Github Repositories</h3>
+<ul>
+  <li ng-repeat="repo in repos">
+    <h4>{{repo.name}}</h4>
+    <p>{{repo.description}}</p>
+  </li>
+</ul>
