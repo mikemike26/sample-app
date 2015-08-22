@@ -1,6 +1,6 @@
 angular.module('appModule').factory('GithubModel', ['$http', '$q', function($http, $q){
   var GithubModel = {};
-  
+
   //find all github repos for a user
   GithubModel.findRepos = function(user) {
     var deferred = $q.defer();
