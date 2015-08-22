@@ -1,7 +1,7 @@
 /**
 * User.js
 *
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
+* @description :: Users model, for adding and removing users to our db
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
