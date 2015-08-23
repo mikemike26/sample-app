@@ -9,7 +9,6 @@ angular.module('appModule').directive('userDisplaySelected',['UserModel', 'Githu
       UserModel.find($stateParams.id).then(function(data) {
         scope.user = data;
         GithubModel.findRepos(data.gitHubId).then(function(data) {
-          console.log(data);
           scope.repos = data;
         }, function(err) {
           scope.gitNotFound = true;

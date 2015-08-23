@@ -3,7 +3,6 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
   //create a user
   UserModel.create = function(user) {
     var deferred = $q.defer();
-    console.log(user);
     $http({
       method: 'POST',
       url: 'http://localhost:1337/users/create',
@@ -11,7 +10,6 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
       data: angular.toJson(user),
       contentType: 'application/json'
     }).success(function (data, status, headers, config) {
-      console.log(data);
       deferred.resolve(angular.fromJson(data));
     }).error(function (data, status, headers, config) {
       deferred.reject(data);
@@ -28,7 +26,6 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
       data: angular.toJson(user),
       contentType: 'application/json'
     }).success(function (data, status, headers, config) {
-      console.log(data);
       deferred.resolve(angular.fromJson(data));
     }).error(function (data, status, headers, config) {
       deferred.reject(data);
@@ -44,7 +41,6 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
       dataType: 'json',
       contentType: 'application/json'
     }).success(function (data, status, headers, config) {
-      console.log(data);
       deferred.resolve(angular.fromJson(data));
     }).error(function (data, status, headers, config) {
       deferred.reject(data);
@@ -60,7 +56,6 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
       dataType: 'json',
       contentType: 'application/json'
     }).success(function (data, status, headers, config) {
-      console.log(data);
       deferred.resolve(angular.fromJson(data));
     }).error(function (data, status, headers, config) {
       deferred.reject(data);
@@ -77,7 +72,6 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
       data: angular.toJson({id: id}),
       contentType: 'application/json'
     }).success(function (data, status, headers, config) {
-      console.log(data);
       deferred.resolve(data);
     }).error(function (data, status, headers, config) {
       deferred.reject(data);

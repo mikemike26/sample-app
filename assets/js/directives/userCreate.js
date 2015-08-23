@@ -7,7 +7,6 @@ angular.module('appModule').directive('userCreate',['UserModel', '$state', '$sta
       scope.user = {};
       scope.showError = false;
       scope.createUser = function() {
-        console.log(scope);
         $timeout.cancel(timer);
         scope.showError = false;
         scope.form.$submitted = true;

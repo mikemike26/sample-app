@@ -10,7 +10,6 @@ angular.module('appModule').directive('userEdit',['UserModel', '$state', '$state
         scope.user = data;
       });
       scope.createUser = function() {
-        console.log(scope);
         $timeout.cancel(timer);
         scope.showError = false;
         scope.form.$submitted = true;
