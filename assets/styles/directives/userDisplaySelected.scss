@@ -1,0 +1,15 @@
+.user-display-selected {
+  h3 {
+    border-bottom: 2px solid #666666;
+    margin-bottom: 0.6em;
+  }
+  li {
+    padding: 1em;
+    &:nth-child(2n) {
+      background-color: #e6e7e6;
+    }
+    h4 {
+      margin-bottom: 0.2em;
+    }
+  }
+}

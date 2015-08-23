@@ -1,3 +1,4 @@
+<button class="btn btn-info" ui-sref="main.users"><span class="glyphicon glyphicon-chevron-left"></span>Back</button>
 <h2>{{user.firstName}} {{user.lastName}} - <a type="button" class="btn btn-warning" ui-sref="main.editUser({id: user.id})">edit</a></h2>
 <p>
   Email Address: {{user.email}} <br />
@@ -8,6 +9,7 @@
   <li ng-repeat="repo in repos">
     <h4>{{repo.name}}</h4>
     <p>{{repo.description}}</p>
+    <a ng-href="{{repo['html_url']}}">view repo</a>
   </li>
   <li ng-if="gitNotFound">No Github account was found for this user</li>
 </ul>
