@@ -1,23 +1,26 @@
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Github Id</th>
-    <td></td>
-  </tr>
-  <tr ng-if="users.length > 0 && !usersLoading" ng-repeat="user in users" ng-click="selectUser(user)">
-    <td>{{user.firstName}} {{user.lastName}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.gitHubId}}</td>
-    <td>
-      <span class="glyphicon glyphicon-trash" ng-hide="deleteId === user.id" ng-click="deleteUser($event, user)"></span>
-      <p ng-show="deleteId === user.id" >
-        <span class="text-danger" ng-click="confirmDelete($event, 'delete')">delete</span>
-        <span class="text-warning" ng-click="confirmDelete($event, 'cancel')">cancel</span>
-      </p>
-    </td>
-  </tr>
-  <tr ng-if="users.length === 0 && !usersLoading">
-    <td colspan="3">There are no users</td>
-  </tr>
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2">Github Id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="users.length > 0 && !usersLoading" ng-repeat="user in users" ng-click="selectUser(user)">
+      <td>{{user.firstName}} {{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.gitHubId}}</td>
+      <td>
+        <span class="glyphicon glyphicon-trash" ng-hide="deleteId === user.id" ng-click="deleteUser($event, user)"></span>
+        <p ng-show="deleteId === user.id" >
+          <span class="text-danger" ng-click="confirmDelete($event, 'delete')">delete</span>
+          <span class="text-warning" ng-click="confirmDelete($event, 'cancel')">cancel</span>
+        </p>
+      </td>
+    </tr>
+    <tr ng-if="users.length === 0 && !usersLoading">
+      <td colspan="3">There are no users</td>
+    </tr>
+  </tbody>
 </table>
