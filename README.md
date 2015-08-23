@@ -4,10 +4,10 @@ The app allows your to create users, then access the details along with a list o
 
 ## Installation
 Make sure you have nodejs installed.
-1.) sudo npm install sails -g
-2.) clone down the repo "git clone https://github.com/mikemike26/users-at-sea.git"
-3.) run "npm install" to build the app
-4.) run "sails lift"
+1. sudo npm install sails -g
+2. clone down the repo "git clone https://github.com/mikemike26/users-at-sea.git"
+3. run "npm install" to build the app
+4. run "sails lift"
 
 
 
