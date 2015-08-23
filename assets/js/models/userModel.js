@@ -78,7 +78,7 @@ angular.module('appModule').factory('UserModel', ['$http', '$q', function($http,
       contentType: 'application/json'
     }).success(function (data, status, headers, config) {
       console.log(data);
-      deferred.resolve(angular.fromJson(data));
+      deferred.resolve(data);
     }).error(function (data, status, headers, config) {
       deferred.reject(data);
     });
