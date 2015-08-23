@@ -13,4 +13,4 @@ Make sure you have nodejs installed.
 
 
 ## Usage
-You land on the users page which will be empty.  Click the create user to get started.  Once a user is created, click the user in the table to access the detauls a list of github repos for that user
+You land on the users page which will be empty.  Click create user to get started.  Once a user is created, click the user in the table to access the detaults and a list of github repos for that user
